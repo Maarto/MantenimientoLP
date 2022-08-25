@@ -54,9 +54,6 @@ function CarouselGallery(props) {
 
 
     useEffect(() => {
-
-        console.log(props.showButton)
-
         if (props.autoplay || !props.showButton) {
             let interval = setInterval(() => {
                 selectNewImage(selectedIndex, props.images);

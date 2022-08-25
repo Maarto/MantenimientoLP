@@ -54,6 +54,7 @@
   --padding-1: 1.2rem;
 
   --box-shadow: 0 1rem 3rem var(--color-light);
+  --box-shadow2: 0 1rem 3rem rgba(132, 139, 200, 0.747);
 
   /*NavBar rooter*/
 
@@ -195,6 +196,12 @@ p {
   max-width: 180vh;
   max-height: 180vh;
   margin: 5rem 8rem;
+  opacity: 0;
+  transition: 1s;
+}
+
+.card_container.loaded {
+  opacity: 1;
 }
 
 .homepage_card {
@@ -207,6 +214,7 @@ p {
   border-radius: 10px;
   box-shadow: var(--box-shadow);
   margin: 0 5rem;
+  cursor: help;
 }
 
 .buttons_changer {
@@ -219,6 +227,7 @@ p {
   font-size: 25px;
   font-weight: bold;
   margin: 0 1rem;
+  cursor: pointer;
 }
 
 .btn_inactive {
@@ -234,4 +243,58 @@ p {
 .homepage_carousel {
   margin-top: 5rem;
   /* border: solid 2px var(--Color6); */
+}
+
+.homepage_card:hover {
+  box-shadow: var(--box-shadow2);
+  transition: all 300ms ease-in-out;
+}
+
+
+
+/* <------------------------ Error Page ------------------->*/
+
+.Error_Container{
+  background: var(--Color1);
+  height: 100vh;
+}
+
+.inner_cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10rem;
+}
+
+.ErrorIcon{
+  position: absolute;
+  color: white;
+  font-size: 15vh;
+  margin-top: 0;
+  animation: ghostanimation 2s infinite;
+  transition: all 300ms ease-in-out;
+}
+
+.detail_error {
+  /* text-decoration: underline; */
+  color: var(--Yellow);
+}
+
+.inner_cont h1{
+  padding-top: 17rem;
+}
+
+@keyframes ghostanimation {
+  0% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: 3rem;
+  }
+
+  100% {
+    margin-top: 0;
+  }
 }

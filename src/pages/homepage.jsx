@@ -3,18 +3,31 @@ import CarouselGallery from "../components/carouselgallery";
 import CardComps from "../components/homepagecards";
 
 import { useState } from 'react';
+import { useEffect } from "react";
 
 let images = ["obra1.jpg", "obra2.jpg", "obra4.jpg"]
 
 function HomePage() {
 
     let [renderedpage, setRenderedPage] = useState(true)
+    let [loaded, setLoaded] = useState(false)
 
 
     function setPage() {
         let condition = renderedpage ? false : true
         setRenderedPage(condition)
+        let lCondition = loaded ? false : true
+        console.log(lCondition)
+        setLoaded(lCondition)
     }
+
+    useEffect(() => {
+        setLoaded(true)
+        let interval = setInterval(() => {
+            setLoaded(true)
+        }, 2000)
+        return () => clearInterval(interval)
+    })
 
     return (
         <div className="backgroundHomePage">
@@ -32,7 +45,7 @@ function HomePage() {
                     {
                         renderedpage ?
                             <>
-                                <CardComps />
+                                <CardComps loaded={loaded}/>
                             </> :
                             <div className="homepage_carousel">
                                 <CarouselGallery images={images} showButton={true}/>
