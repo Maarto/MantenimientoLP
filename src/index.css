@@ -1,13 +1,237 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+:root {
+
+  --BackgroundGrey1: rgb(30, 35, 38);
+  --BackgroundGrey2: rgb(37, 42, 46);
+  --CardColor: #1CB698;
+  --Background2Opacity: rgba(12, 26, 39, 0.678);
+  --Background2: #0c1a27;
+  --Yellow: #E2CE49;
+  --YellowOpacity50: #e2ce493d;
+
+  /* Paleta d colores*/
+
+  --Color1: #0C1A27;
+  --Color2Opacity: rgba(19, 32, 41, 0.671);
+  --Color2: #132029;
+  --Color3: #1A262A;
+  --Color4: #212C2B;
+  --Color5: #27312C;
+  --Color6: #424730;
+  --Color7: #777438;
+  --Color8: #ADA141;
+  --Color9: #C8B845;
+  --Color10: #E2CE49;
+
+  --GreyColor: #BBBBBB;
+
+  --blanquito: #f0eeee;
+  --grisesito: #292929;
+  --grisesitoOscuro: #393939;
+  --color-primary: #7380ec;
+  --color-danger: #ff7782;
+  --color-success: #41f1b6;
+  --color-warning: #ffbb55;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dce1eb;
+  --color-dark: #363949;
+  --color-light: rgba(132, 139, 200, 0.18);
+  --color-primary-variant: #111e88;
+  --color-dark-variant: #677483;
+  --color-background: #e2e1e2;
+
+
+
+  /* --card-border-radius: 2rem; */
+  --border-radius-1: 0.4rem;
+  --border-radius-2: 0.8rem;
+  --border-radius-3: 1.2rem;
+
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 1rem 3rem var(--color-light);
+
+  /*NavBar rooter*/
+
+  --navFontSize: 1rem;
+
+  font-family: poppins, sans-serif
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  /* outline: 0; */
+  appearance: none;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+/* <---------------------- Navigation Bar Styles ------------------------>*/
+
+nav {
+  position: absolute;
+  /* background: var(--Color2Opacity); */
+  width: 100%;
+  height: 4rem;
+  z-index: 2;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  margin: 0 3rem;
+}
+
+nav h1 {
+  margin-left: 4rem;
+}
+
+nav li {
+  display: inline-flex;
+  font-size: 20px;
+  margin: 0.8rem 2rem;
+}
+
+nav li a:hover {
+  color: var(--Color10);
+  border-bottom: solid 1px var(--Yellow);
+  transition: all 300ms ease-in-out;
+}
+
+nav li a {
+  color: white;
+}
+
+.lp {
+  color: var(--Yellow);
+}
+
+.title {
+  border-bottom: solid 1px white;
+  animation: titleborder 1s linear infinite;
+  transition: all 300ms ease-in-out;
+}
+
+@keyframes titleborder {
+  0% {
+    border-bottom: solid 1px white
+  }
+
+  50% {
+    border-bottom: solid 1px var(--Yellow)
+  }
+
+  100% {
+    border-bottom: solid 1px white
+  }
+
+}
+
+
+/* <---------------------- Home Page Styles ------------------------>*/
+
+.backgroundHomePage {
+  background: url('./assets/img/gen/WorkerBackground.jpg');
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: 100%;
+}
+
+.layer {
+  background-color: #0c1a27ce;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: white;
+}
+
+.all_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.homePage__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem;
+}
+
+.homePage__information h1 {
+  font-size: 50px;
+  border-bottom: solid 3px var(--Yellow);
+}
+
+.card_container {
+  /* position: absolute; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 180vh;
+  max-height: 180vh;
+  margin: 5rem 8rem;
+}
+
+.homepage_card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 3rem;
+  background: var(--Color6);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  margin: 0 5rem;
+}
+
+.buttons_changer {
+  margin-top: 5rem;
+  /* border-bottom: solid 2px var(--Yellow); */
+}
+
+.buttons_changer button {
+  background: transparent;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0 1rem;
+}
+
+.btn_inactive {
+  color: var(--GreyColor);
+  border-bottom: solid 2px var(--GreyColor);
+}
+
+.btn_active {
+  color: var(--Yellow);
+  border-bottom: solid 2px var(--Yellow);
+}
+
+.homepage_carousel {
+  margin-top: 5rem;
+  /* border: solid 2px var(--Color6); */
 }
