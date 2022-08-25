@@ -214,7 +214,6 @@ p {
   border-radius: 10px;
   box-shadow: var(--box-shadow);
   margin: 0 5rem;
-  cursor: help;
 }
 
 .buttons_changer {
@@ -254,7 +253,7 @@ p {
 
 /* <------------------------ Error Page ------------------->*/
 
-.Error_Container{
+.Error_Container {
   background: var(--Color1);
   height: 100vh;
 }
@@ -267,7 +266,7 @@ p {
   padding: 10rem;
 }
 
-.ErrorIcon{
+.ErrorIcon {
   position: absolute;
   color: white;
   font-size: 15vh;
@@ -281,7 +280,7 @@ p {
   color: var(--Yellow);
 }
 
-.inner_cont h1{
+.inner_cont h1 {
   padding-top: 17rem;
 }
 
@@ -297,4 +296,46 @@ p {
   100% {
     margin-top: 0;
   }
+}
+
+/*<---------------- Carousel -------------------->*/
+
+.CarouselIMG {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border: solid 3px var(--YellowOpacity50);
+  box-shadow: var(--box-shadow);
+  opacity: 0;
+  transition: 1s;
+}
+
+.CarouselIMG.loaded {
+  opacity: 1;
+}
+
+/* .CarouselButtonContainer {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 15px;
+} */
+
+.CarouselButton {
+  position: relative;
+  bottom: 10rem;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  background: transparent;
+  border: solid 2px var(--YellowOpacity50);
+  padding: 8px;
+  margin: 0 20px;
+}
+
+.CarouselButton:hover {
+  background: var(--Color1);
+  border: solid 2px var(--Yellow);
+  transition: all 300ms ease-in-out;
 }

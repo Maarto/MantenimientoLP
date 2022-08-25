@@ -2,31 +2,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import styled from 'styled-components'
 
-let CarouselIMG = styled.img`
-max-width: 500px;
-width: 100%;
-height: auto;
-opacity: 0;
-transition: 1s;
-&.loaded {
-  opacity: 1;
-}
-`;
-
-let CarouselButtonContainer = styled.div`
-display: flex;
-align-content: center;
-flex-direction: row;
-margin-top: 15px;
-`;
-
-let CarouselButton = styled.button`
-  color: white;
-  background-color: #eb118a;
-  padding: 8px;
-  margin: 0 5px;
-`;
-
 
 function CarouselGallery(props) {
 
@@ -65,30 +40,30 @@ function CarouselGallery(props) {
 
     return (
         <div>
-            <CarouselIMG src={require(`../assets/img/carousel/${selectedImage}`)}
+            {
+                props.showButton ? <>
+                    <button className="CarouselButton" onClick={() => {
+                        console.log('atras')
+                        console.log(loaded)
+                        previous()
+                    }}>{'<'}</button>
+                </> : <></>
+            }
+            <img src={require(`../assets/img/carousel/${selectedImage}`)}
                 alt='testing'
-                className={loaded ? "loaded" : ""}
-                onLoad={() => setLoaded(true)} 
+                className={loaded ? "CarouselIMG loaded" : "CarouselIMG"}
+                onLoad={() => setLoaded(true)}
+                width={20}
+                height={20}
             />
-
-            <CarouselButtonContainer>
-
-                {
-                    props.showButton ?
-                        <>
-                            <CarouselButton onClick={() => {
-                                console.log('atras')
-                                console.log(loaded)
-                                previous()
-                            }}>Volver</CarouselButton>
-                            <CarouselButton onClick={() => {
-                                console.log("avanzando")
-                                next()
-                            }}>Seguir</CarouselButton>
-                        </>
-                        : <></>
-                }
-            </CarouselButtonContainer>
+            {
+                props.showButton ? <>
+                    <button className="CarouselButton" onClick={() => {
+                        console.log("avanzando")
+                        next()
+                    }}>{'>'}</button>
+                </> : <></>
+            }
         </div>
     )
 

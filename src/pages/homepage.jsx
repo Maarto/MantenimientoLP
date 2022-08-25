@@ -5,7 +5,7 @@ import CardComps from "../components/homepagecards";
 import { useState } from 'react';
 import { useEffect } from "react";
 
-let images = ["obra1.jpg", "obra2.jpg", "obra4.jpg"]
+let images = ["obra1.jpg", "obra2.jpg", "obra3.jpg"]
 
 function HomePage() {
 
